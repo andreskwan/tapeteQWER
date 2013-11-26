@@ -9,7 +9,7 @@
 
 #define LEDPIN     13       // status LED pin
 #define KEYPIN     12       // Send Keyboard strucks
-#define PIEZOTHRESHOLD 200  // analog threshold for piezo sensing
+#define PIEZOTHRESHOLD 50  // analog threshold for piezo sensing
 #define PADNUM 6          // number of pads
 
 int val;
