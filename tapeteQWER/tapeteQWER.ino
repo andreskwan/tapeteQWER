@@ -9,7 +9,7 @@
 
 #define LEDPIN     13       // status LED pin
 #define KEYPIN     12       // Send Keyboard strucks
-#define PIEZOTHRESHOLD 350  // analog threshold for piezo sensing
+#define PIEZOTHRESHOLD 300  // analog threshold for piezo sensing
 #define PADNUM 4            // number of pads
 #define DELAY_TIME 180
 
@@ -37,8 +37,8 @@ void loop() {
           delay(DELAY_TIME);
           Keyboard.releaseAll();
       }
-      if(analogRead(1) > 250){
-        //w
+      if(analogRead(1) > PIEZOTHRESHOLD){
+        //
           digitalWrite(LEDPIN,HIGH);  // indicate we're sending MIDI data
 //          Serial.press("boton: 6");
 //          Serial.print("valor: ");
@@ -48,7 +48,7 @@ void loop() {
           delay(DELAY_TIME);
           Keyboard.releaseAll();
       }
-      if(analogRead(2) > 400){
+      if(analogRead(2) > PIEZOTHRESHOLD){
           digitalWrite(LEDPIN,HIGH);  // indicate we're sending MIDI data
 //          Serial.print("boton: 7");
 //          Serial.print("valor: ");
@@ -58,7 +58,7 @@ void loop() {
           delay(DELAY_TIME);
           Keyboard.releaseAll();
       }
-      if(analogRead(3) > 250){
+      if(analogRead(3) > PIEZOTHRESHOLD){
           digitalWrite(LEDPIN,HIGH);  // indicate we're sending MIDI data
 //          Serial.print("boton: 8");
 //          Serial.print("valor: ");
